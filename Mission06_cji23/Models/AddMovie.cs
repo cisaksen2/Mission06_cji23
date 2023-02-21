@@ -11,19 +11,21 @@ namespace Mission06_cji23.Models
         [Key]
         [Required]
         public int MovieId { get; set; }
-        [Required]
-        public string Category { get; set; }
-        [Required]
+        [Required(ErrorMessage = "A title is required!")]
         public string Title { get; set; }
-        [Required]
+        [Required(ErrorMessage = "A year is required!")]
         public int Year { get; set; }
-        [Required]
+        [Required(ErrorMessage = "A director is required!")]
         public string Director { get; set; }
-        [Required]
+        [Required(ErrorMessage = "A rating is required!")]
         public string Rating { get; set; }
         public bool Edited { get; set; }
         public string LentTo { get; set; }
         [StringLength(25)]
         public string Notes { get; set; }
+
+
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }
